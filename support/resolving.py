@@ -19,7 +19,7 @@ def resolve(config: dict, qname: str, qtype: str):
             print_data = f"{print_data}, data: \"{str(r_data)}\""
 
         # Debug
-        print(print_query, print_data)
+        print(f"{print_query}{print_data}")
         
         # Success
         return answers
