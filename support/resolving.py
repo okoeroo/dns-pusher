@@ -2,7 +2,7 @@ import sys
 import dns.resolver
 
 
-def resolve(config: dict, qname: str, qtype: str) -> dns.resolver.Answers:
+def resolve(config: dict, qname: str, qtype: str):
     # Setup
     resolver                = dns.resolver.Resolver()
     resolver.nameservers    = config['resolvers']
