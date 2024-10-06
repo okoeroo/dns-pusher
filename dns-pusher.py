@@ -7,6 +7,7 @@ def main(config: dict) -> bool:
     input_list = read_file_strip_line_lower_case(config['inputfilepath'])
     items_to_resolve = parse_input_list(input_list)
     
+    # Resolve the list
     for resolvable in items_to_resolve:
         resolve(config, resolvable['qname'], resolvable['qtype'])
 
@@ -18,7 +19,5 @@ if __name__ == "__main__":
     # Setup all the things
     config = setup(argp)
     
-    
-    config['inputfilepath'] = "samples/highvalue.list"
-    
+    # Main
     main(config)
