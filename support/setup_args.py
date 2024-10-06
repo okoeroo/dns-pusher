@@ -10,7 +10,7 @@ def argparsing(scriptpath):
                         action="store_true",
                         default=False)
     parser.add_argument("-i", "--input",
-                        dest="input",
+                        dest="inputfilepath",
                         required=True,
                         type=str)
     parser.add_argument("--resolvers",
@@ -47,7 +47,7 @@ def setup(argp: argparse.ArgumentParser) -> dict:
 
     config['exec'] = os.path.basename(__file__)
     config['verbose'] = argp.verbose
-    config['input'] = argp.input
+    config['inputfilepath'] = argp.inputfilepath
     config['resolvers'] = argp.resolvers.split(",")
     config['timeout'] = argp.timeout
     config['lifetime'] = argp.lifetime
